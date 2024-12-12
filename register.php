@@ -14,6 +14,16 @@
             <div class="card shadow">
                 <div class="card body">
                     <h2 class="text-center">Register</h2>
+
+                    <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        $password = password_hash(),$_POST('password');
+
+                        $sql = 
+                    }
+                    ?>
                     
                     <form method="POST">
                         <div class="mb-3">
@@ -29,7 +39,7 @@
                             <input type="password" name="password" id="passoword" class="form-control">
                         </div>
 
-                        <button></button>
+                        <button class="btn btn-primary w-100" type="submit">Submit</button>
                     </form>
                 </div>
             </div>
