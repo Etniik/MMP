@@ -15,7 +15,7 @@
     }
     $sql = 'SELECT * FROM users WHERE email = ?';
     $stmt = $pdo->prepare($sql);
-    $stmt = $sql->bindParam(':email', $email);
+    $stmt = $sql->bindParam('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();

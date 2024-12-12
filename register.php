@@ -19,9 +19,16 @@
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $name = $_POST['name'];
                         $email = $_POST['email'];
-                        $password = password_hash(),$_POST('password');
+                        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-                        $sql = 
+                        $sql = "INSERT INTO users (name, email, password) VALUES (?,?,?)";
+                        $stmt = $pdo->($sql);
+                        $stmt->bind_param('sss', $email, $name, $password);
+                        
+                        
+                        if ($stmt->execute()) {
+                            echo
+                        }
                     }
                     ?>
                     
